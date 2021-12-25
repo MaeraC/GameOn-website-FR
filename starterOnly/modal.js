@@ -21,8 +21,13 @@ function launchModal() {
   modalbg.style.display = "block";
 }
 
+////////////////////////////////////////////////////////////////////////////////////////
+
 close.addEventListener('click' , () => {
   modalbg.style.display = "none";
 })
+/*J'ai créé un event sur la croix "close" afin qu'au clique la modale se ferme.
+Pour qu'elle se ferme, j'ai modifié la propriété CSS display en none, ce qui a 
+permit de la faire disparaître. */
 
 
