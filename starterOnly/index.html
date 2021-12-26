@@ -48,22 +48,27 @@
               <div class="formData">
                 <label for="first">Prénom</label><br>
                 <input class="text-control" type="text" id="first" name="first" minlength="2" required="required" /><br>
+                <span id="first-missing"></span><br>
               </div>
               <div class="formData">
                 <label for="last">Nom</label><br>
-                <input class="text-control" type="text" id="last" name="last" minlength="2" required="required"/><br>
+                <input class="text-control" type="text" id="last" name="last" minlength="2"/><br>
+                <span id="last-missing"></span><br>
               </div>
               <div class="formData">
                 <label for="email">E-mail</label><br>
-                <input class="text-control" type="email" id="email" name="email" required="required"/><br>
+                <input class="text-control" type="email" id="email" name="email"/><br>
+                <span id="email-missing"></span>
               </div>
               <div class="formData">
                 <label for="birthdate">Date de naissance</label><br>
-                <input class="text-control" type="date" id="birthdate" name="birthdate" required="required"/><br>
+                <input class="text-control" type="date" id="birthdate" name="birthdate"/><br>
+                <span id="birthdate-missing"></span>
               </div>
               <div class="formData">
                 <label for="quantity">À combien de tournois GameOn avez-vous déjà participé ?</label><br>
-                <input type="number" class="text-control" id="quantity" name="quantity" min="0" max="99" required="required">
+                <input type="number" class="text-control" id="quantity" name="quantity" min="0" max="99">
+                <span id="quantity-missing"></span>
               </div>
 
               <p class="text-label">À quel tournoi souhaitez-vous participer cette année ?</p>
@@ -105,6 +110,7 @@
                   <span class="checkbox-icon"></span>
                   Je souhaite être prévenu pour les prochains évènements.
                 </label><br>
+                <span id="checkbox-missing"></span>
               </div>
 
               <input id="submit" class="btn-submit button" type="submit" value="C'est parti"/>
