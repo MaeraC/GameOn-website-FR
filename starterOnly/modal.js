@@ -25,7 +25,8 @@ const inputQuantity = document.getElementById('quantity');
 const quantityMissing = document.getElementById('quantity-missing');
 const inputCheckbox = document.getElementById('checkbox1');
 const checkboxMissing = document.getElementById('checkbox-missing');
-
+const confirmation = document.querySelector('.confirmation');
+const input = document.querySelectorAll('input');
 
 // launch modal event
 modalBtn.forEach((btn) => btn.addEventListener("click", launchModal));
@@ -37,12 +38,16 @@ function launchModal() {
 
 ////////////////////////////////////////////////////////////////////////////////////////
 
+//FERMETURE DE LA MODALE
+
 close.addEventListener('click' , () => {
   modalbg.style.display = "none";
 })
 /*J'ai créé un event sur la croix "close" afin qu'au clique la modale se ferme.
 Pour qu'elle se ferme, j'ai modifié la propriété CSS display en none, ce qui a 
 permit de la faire disparaître. */
+
+//VALIDATION DU FORMULAIRE
 
 submitBtn.addEventListener('click' , firstChars);
 function firstChars(e) {
@@ -131,6 +136,9 @@ function checkboxEmpty(e) {
     checkboxMissing.style.fontSize = "14px";
   } 
 }
+
+//CONFIRMATION D'ENVOI DU FORMULAIRE
+
 
 
 
