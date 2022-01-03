@@ -10,9 +10,11 @@ function editNav() {
 // DOM Elements
 const modalbg = document.querySelector(".bground");
 const modalBtn = document.querySelectorAll(".modal-btn");
-const formData = document.querySelectorAll(".formData");
 const close = document.querySelector('.close');
 const submitBtn = document.getElementById('submit');
+const form = document.getElementById('form');
+const content = document.querySelector('.content');
+
 const inputFirst = document.getElementById('first');
 const firstMissing = document.getElementById('first-missing');
 const inputLast = document.getElementById('last');
@@ -25,8 +27,12 @@ const inputQuantity = document.getElementById('quantity');
 const quantityMissing = document.getElementById('quantity-missing');
 const inputCheckbox = document.getElementById('checkbox1');
 const checkboxMissing = document.getElementById('checkbox-missing');
+
 const confirmation = document.querySelector('.confirmation');
-const input = document.querySelectorAll('input');
+
+const confirmationBtn = document.querySelector('.confirmation-btn');
+const confirmationClose = document.querySelector('.confirmation-close');
+
 
 // launch modal event
 modalBtn.forEach((btn) => btn.addEventListener("click", launchModal));
@@ -38,108 +44,140 @@ function launchModal() {
 
 ////////////////////////////////////////////////////////////////////////////////////////
 
-//FERMETURE DE LA MODALE
+//FERMETURE DU FORMUALAIRE
 
 close.addEventListener('click' , () => {
   modalbg.style.display = "none";
 })
-/*J'ai créé un event sur la croix "close" afin qu'au clique la modale se ferme.
-Pour qu'elle se ferme, j'ai modifié la propriété CSS display en none, ce qui a 
-permit de la faire disparaître. */
 
 //VALIDATION DU FORMULAIRE
 
-submitBtn.addEventListener('click' , firstChars);
-function firstChars(e) {
-  
+function validate(e) {
+  e.preventDefault();
+
+  let isInputFirstValid = false ;
+  let isInputLastValid = false ;
+  let isInputEmailValid = false ;
+  let isInputBirthdateValid = false ;
+  let isInputQuantityValid = false ;
+  let isInputCheckboxValid = false ;
+
+  //Vérification du champs PRENOM
   if(inputFirst.value.length < 2 ) {
-    e.preventDefault();
     firstMissing.textContent = "Veuillez entrer au minimum deux caractères.";
     firstMissing.style.color = "red";
     firstMissing.style.fontSize = "14px";
+    isInputFirstValid = false ;
   }
-}
-
-submitBtn.addEventListener('click' , firstEmpty );
-function firstEmpty(e) {
-
-  if(inputFirst.value == ""){
-    e.preventDefault();
+  else if(inputFirst.value == "") {
     firstMissing.textContent = "Veuillez entrer votre prénom.";
     firstMissing.style.color = "red";
     firstMissing.style.fontSize = "14px";
+    isInputFirstValid = false ;
+  }
+  else{
+    isInputFirstValid = true ;
+    firstMissing.textContent = "" ;
   } 
-}
 
-submitBtn.addEventListener('click' , lastChars);
-function lastChars(e) {
-
+  //Vérification du champs NOM
   if(inputLast.value.length < 2) {
-    e.preventDefault();
     lastMissing.textContent = "Veuillez entrer au minimum deux caractères.";
     lastMissing.style.color = "red";
     lastMissing.style.fontSize = "14px";
+    isInputLastValid = false ;
   }
-}
-
-submitBtn.addEventListener('click' , lastEmpty );
-function lastEmpty(e) {
-
-  if(inputLast.value == ""){
-    e.preventDefault();
+  else if(inputLast.value == "") {
     lastMissing.textContent = "Veuillez entrer votre nom.";
     lastMissing.style.color = "red";
     lastMissing.style.fontSize = "14px";
-  } 
-}
+    isInputLastValid = false ;
+  }
+  else {
+    isInputLastValid = true ;
+    lastMissing.textContent = "";
+  }
 
-submitBtn.addEventListener('click' , emailEmpty );
-function emailEmpty(e) {
-
+  //Vérification du champs EMAIL
   if(inputEmail.value == ""){
-    e.preventDefault();
     emailMissing.textContent = "Veuillez entrer votre adresse e-mail.";
     emailMissing.style.color = "red";
     emailMissing.style.fontSize = "14px";
-  } 
-}
+    isInputEmailValid = false ;
+  }  
+  else {
+    isInputEmailValid = true ;
+    emailMissing.textContent = "";
+  }
 
-submitBtn.addEventListener('click' , birthdateEmpty );
-function birthdateEmpty(e) {
-
+  //Vérification du champs DATE DE NAISSANCE
   if(inputBirthdate.value == ""){
-    e.preventDefault();
     birthdateMissing.textContent = "Veuillez entrer votre date de naissance.";
     birthdateMissing.style.color = "red";
     birthdateMissing.style.fontSize = "14px";
+    isInputBirthdateValid = false ;
   } 
-}
- 
-submitBtn.addEventListener('click' , quantityEmpty );
-function quantityEmpty(e) {
+  else {
+    isInputBirthdateValid = true ;
+    birthdateMissing.textContent = "";
+  }
 
+  //Vérification du champs VILLES
   if(inputQuantity.value == ""){
-    e.preventDefault();
     quantityMissing.textContent = "Veuillez entrer un nombre entre 0 et 99.";
     quantityMissing.style.color = "red";
     quantityMissing.style.fontSize = "14px";
+    isInputQuantityValid = false ;
   } 
-}
+  else {
+    isInputQuantityValid = true ;
+    quantityMissing.textContent = "";
+  }
 
-submitBtn.addEventListener('click' , checkboxEmpty );
-function checkboxEmpty(e) {
-
+  //Vérification du champs CHECKBOX
   if(inputCheckbox.checked == false){
-    e.preventDefault();
     checkboxMissing.textContent = "Veuillez accepter nos conditions d'utilisation.";
     checkboxMissing.style.color = "red";
     checkboxMissing.style.fontSize = "14px";
+    isInputCheckboxValid = false ;
   } 
+  else {
+    isInputCheckboxValid = true ;
+    checkboxMissing.textContent = "";
+  }
+
+  //Message de confirmation 
+  if (isInputFirstValid &&
+      isInputLastValid &&
+      isInputEmailValid &&
+      isInputBirthdateValid &&
+      isInputQuantityValid &&
+      isInputCheckboxValid ) {
+
+        content.style.display = "none";
+        confirmation.style.display = "block" ;
+      }
+  
 }
 
-//CONFIRMATION D'ENVOI DU FORMULAIRE
+submitBtn.addEventListener('click' , validate);
 
 
+//FERMETURE MESSAGE DE CONFIRMATION
+
+confirmationBtn.addEventListener('click' , () => {
+  modalbg.style.display = "none";
+  confirmation.style.display = "none";
+  content.style.display = "block";
+  form.reset();
+})
+
+confirmationClose.addEventListener('click' , () => {
+  modalbg.style.display = "none";
+  confirmation.style.display = "none";
+  content.style.display = "block";
+  form.reset();
+})
 
 
 

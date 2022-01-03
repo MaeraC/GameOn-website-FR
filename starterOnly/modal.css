@@ -534,11 +534,36 @@ footer {
     margin: 5% auto;
     width: 100%;
     max-width: 500px;
+    height: 100vh;
     background: #232323;
     border-radius: 10px;
-    overflow: hidden;
     position: relative;
     color: #fff;
     padding-top: 10px;
     display: none;
+}
+.confirmation-close {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  cursor: pointer;
+}
+.confirmation-msg {
+  text-align: center;
+  padding-top: 50%;
+  font-size: 36px;
+  margin: 0 50px;
+}
+.confirmation-btn {
+  position: absolute;
+  bottom: 20px;
+  left: 32%;
+  width: 182px;
+  height: 40px;
+  background: #fe142f;
+  border-radius: 7px;
+  font-size: 14px;
+  color: white;
+  cursor: pointer;
+  border: 0;
 }
