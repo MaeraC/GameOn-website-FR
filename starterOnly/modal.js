@@ -67,13 +67,13 @@ function validate(e) {
   if(inputFirst.value.length < 2 ) {
     firstMissing.textContent = "Veuillez entrer au minimum deux caractères.";
     firstMissing.style.color = "red";
-    firstMissing.style.fontSize = "14px";
+    firstMissing.style.fontSize = "12px";
     isInputFirstValid = false ;
   }
   else if(inputFirst.value == "") {
     firstMissing.textContent = "Veuillez entrer votre prénom.";
     firstMissing.style.color = "red";
-    firstMissing.style.fontSize = "14px";
+    firstMissing.style.fontSize = "12px";
     isInputFirstValid = false ;
   }
   else{
@@ -85,13 +85,13 @@ function validate(e) {
   if(inputLast.value.length < 2) {
     lastMissing.textContent = "Veuillez entrer au minimum deux caractères.";
     lastMissing.style.color = "red";
-    lastMissing.style.fontSize = "14px";
+    lastMissing.style.fontSize = "12px";
     isInputLastValid = false ;
   }
   else if(inputLast.value == "") {
     lastMissing.textContent = "Veuillez entrer votre nom.";
     lastMissing.style.color = "red";
-    lastMissing.style.fontSize = "14px";
+    lastMissing.style.fontSize = "12px";
     isInputLastValid = false ;
   }
   else {
@@ -103,7 +103,7 @@ function validate(e) {
   if(inputEmail.value == ""){
     emailMissing.textContent = "Veuillez entrer votre adresse e-mail.";
     emailMissing.style.color = "red";
-    emailMissing.style.fontSize = "14px";
+    emailMissing.style.fontSize = "12px";
     isInputEmailValid = false ;
   }  
   else {
@@ -115,7 +115,7 @@ function validate(e) {
   if(inputBirthdate.value == ""){
     birthdateMissing.textContent = "Veuillez entrer votre date de naissance.";
     birthdateMissing.style.color = "red";
-    birthdateMissing.style.fontSize = "14px";
+    birthdateMissing.style.fontSize = "12px";
     isInputBirthdateValid = false ;
   } 
   else {
@@ -127,7 +127,7 @@ function validate(e) {
   if(inputQuantity.value == ""){
     quantityMissing.textContent = "Veuillez entrer un nombre entre 0 et 99.";
     quantityMissing.style.color = "red";
-    quantityMissing.style.fontSize = "14px";
+    quantityMissing.style.fontSize = "12px";
     isInputQuantityValid = false ;
   } 
   else {
@@ -139,7 +139,7 @@ function validate(e) {
   if(inputCheckbox.checked == false){
     checkboxMissing.textContent = "Veuillez accepter nos conditions d'utilisation.";
     checkboxMissing.style.color = "red";
-    checkboxMissing.style.fontSize = "14px";
+    checkboxMissing.style.fontSize = "12px";
     isInputCheckboxValid = false ;
   } 
   else {
