@@ -16,20 +16,20 @@ const form = document.getElementById('form');
 const content = document.querySelector('.content');
 
 const inputFirst = document.getElementById('first');
-const firstMissing = document.getElementById('first-missing');
 const inputLast = document.getElementById('last');
-const lastMissing = document.getElementById('last-missing');
 const inputEmail = document.getElementById('email');
-const emailMissing = document.getElementById('email-missing');
 const inputBirthdate = document.getElementById('birthdate');
-const birthdateMissing = document.getElementById('birthdate-missing');
 const inputQuantity = document.getElementById('quantity');
-const quantityMissing = document.getElementById('quantity-missing');
 const inputCheckbox = document.getElementById('checkbox1');
+
+const firstMissing = document.getElementById('first-missing');
+const lastMissing = document.getElementById('last-missing');
+const emailMissing = document.getElementById('email-missing');
+const birthdateMissing = document.getElementById('birthdate-missing');
+const quantityMissing = document.getElementById('quantity-missing');
 const checkboxMissing = document.getElementById('checkbox-missing');
 
 const confirmation = document.querySelector('.confirmation');
-
 const confirmationBtn = document.querySelector('.confirmation-btn');
 const confirmationClose = document.querySelector('.confirmation-close');
 
@@ -41,8 +41,6 @@ modalBtn.forEach((btn) => btn.addEventListener("click", launchModal));
 function launchModal() {
   modalbg.style.display = "block";
 }
-
-////////////////////////////////////////////////////////////////////////////////////////
 
 //FERMETURE DU FORMUALAIRE
 
