@@ -15,6 +15,7 @@ const submitBtn = document.getElementById('submit');
 const form = document.getElementById('form');
 const content = document.querySelector('.content');
 
+//Inputs du formulaire
 const inputFirst = document.getElementById('first');
 const inputLast = document.getElementById('last');
 const inputEmail = document.getElementById('email');
@@ -22,6 +23,7 @@ const inputBirthdate = document.getElementById('birthdate');
 const inputQuantity = document.getElementById('quantity');
 const inputCheckbox = document.getElementById('checkbox1');
 
+//Span erreur du formulaire
 const firstMissing = document.getElementById('first-missing');
 const lastMissing = document.getElementById('last-missing');
 const emailMissing = document.getElementById('email-missing');
@@ -29,6 +31,7 @@ const birthdateMissing = document.getElementById('birthdate-missing');
 const quantityMissing = document.getElementById('quantity-missing');
 const checkboxMissing = document.getElementById('checkbox-missing');
 
+//Message de confirmation
 const confirmation = document.querySelector('.confirmation');
 const confirmationBtn = document.querySelector('.confirmation-btn');
 const confirmationClose = document.querySelector('.confirmation-close');
