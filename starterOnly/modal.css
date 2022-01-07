@@ -75,6 +75,9 @@ img {
     float: right;
     display: block;
   }
+  .main-navbar {
+    padding-top: 15px;
+  }
 }
 
 @media screen and (max-width: 768px) {
@@ -82,13 +85,19 @@ img {
   .topnav.responsive .icon {
     position: absolute;
     right: 0;
-    top: 0;
+    top: 15px;
   }
   .topnav.responsive a {
     float: none;
     display: block;
     text-align: left;
     font-size: 14px;
+  }
+  .header-logo {
+    padding-top: 10px;
+  }
+  .header-logo img {
+    height: 20px;
   }
 }
 
@@ -101,6 +110,7 @@ img {
     display: block;
     margin-top: -15px;
   }
+  
 } 
 
 main {
@@ -114,6 +124,13 @@ main {
   border-radius: 2rem;
   text-align: justify;
 }
+@media screen and (max-width: 540px) {
+  main {
+    padding: 0;
+    margin: 20px;
+  }
+}
+
 
 .modal-btn {
   font-size: 145%;
@@ -493,7 +510,7 @@ footer {
   .hero-content {
     background: #fff;
     color: #000;
-    padding: 20px;
+    padding: 0;
   }
   .hero-content::after {
     content: unset;
@@ -502,7 +519,7 @@ footer {
     display: none;
   }
   .hero-headline {
-    font-size: 40px;
+    font-size: 38px;
     white-space: normal;
   }
   .hero-text {
@@ -521,11 +538,20 @@ footer {
     width: 140px;
   }
   .copyrights {
-    margin-top: 50px;
+    margin-top: 0;
     text-align: center;
     font-size: 10px;
   }
 }
+@media screen and (max-width: 540px){
+  .hero-text {
+    width: 320px;
+  }
+  .hero-headline {
+    width: 360px;
+  }
+}
+
 
 @keyframes modalopen {
   from {
@@ -549,6 +575,7 @@ footer {
     border-radius: 10px;
     position: relative;
     color: #fff;
+    text-align: center;
     padding-top: 10px;
     display: none;
 }
@@ -557,6 +584,7 @@ footer {
   top: 15px;
   right: 15px;
   cursor: pointer;
+  font-size: 30px;
 }
 .confirmation-msg {
   text-align: center;
@@ -576,4 +604,10 @@ footer {
   color: white;
   cursor: pointer;
   border: 0;
+}
+
+@media only screen and (max-width: 500px) {
+  .confirmation-btn {
+    left: 26%;
+  }
 }
