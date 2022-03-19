@@ -162,7 +162,7 @@ function validate(e) {
 // launch modal event
 modalBtn.forEach((btn) => btn.addEventListener("click", launchModal));
 
-// FERMETURE DU FORMUALAIRE
+// FERMETURE DU FORMULAIRE
 
 close.addEventListener('click', () => {
   modalbg.style.display = "none";
